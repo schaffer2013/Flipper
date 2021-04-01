@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+import os
 from PIL import Image, ImageDraw, ImageFont
 from adafruit_epd.epd import Adafruit_EPD
 
@@ -10,7 +11,9 @@ medium_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.tt
 large_font = ImageFont.truetype(
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 24
 )
-icon_font = ImageFont.truetype("./meteocons.ttf", 48)
+local_dir=os.getcwd()
+
+icon_font = ImageFont.truetype("/home/pi/Desktop/Flipper/flipper-piZero/meteocons.ttf", 48)
 
 # Map the OpenWeatherMap icon code to the appropriate font character
 # See http://www.alessioatzeni.com/meteocons/ for icons
